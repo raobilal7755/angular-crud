@@ -1,0 +1,48 @@
+
+<div class="container">
+    <!-- this is for button purpose -->
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <button class="btn btn-primary btn-lg">Student List</button>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-lg-end align-items-center">
+            <a [routerLink]="['insert']" class="btn btn-outline-light btn-lg">+ Add New Student</a>
+
+        </div>
+    </div>
+
+    <!-- end button -->
+
+
+    <!-- this is a table portion -->
+    <table class="table table-bordered bg-dark text-white">
+        <thead>
+            <tr class="bg-success text-white">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of mydata">
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.age}}</td>
+                <td>{{data.salary}}</td>
+                <td><button class="btn btn-danger" (click)="deleterecord(data.id)">Delete</button></td>
+                
+            </tr>
+            
+        </tbody>
+    </table>
+    
+
+
+    <!-- end table portion -->
+</div>
+
+
+
+
